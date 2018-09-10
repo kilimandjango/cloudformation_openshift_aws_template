@@ -1,0 +1,1 @@
+# cloudformation_openshift_aws_template.yaml
