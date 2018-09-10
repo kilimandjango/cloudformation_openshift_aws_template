@@ -14,7 +14,7 @@ Mappings:
 #########
   RegionMap:
     eu-central-1:
-      CentOS7: "ami-337be65c"
+      CentOS7: "ami-dd3c0f36"
 
 Resources:
 ##########
