@@ -219,11 +219,11 @@ The web console can be accessed over:
 https://<PUBLIC_DNS>:8443
 ```
 
-## Nex steps
-## Update the Stack
+## Next steps
+### Update the Stack
 The stack can be updated by uploading a new template file. AWS is checking if everything is according the configuration.
 
-## change instances
+### change instances
 You can change the instances by shutting down the instance (on OS level) and stop the instance (on AWS).
 Then you can change the instancetype and start it again.
 
