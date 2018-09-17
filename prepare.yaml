@@ -1,0 +1,28 @@
+---
+- hosts: nodes
+  gather_facts: no
+  pre_tasks:
+    - name: 'install python2'
+      raw: sudo yum install -y python
+
+  tasks:
+
+    - name: upgrade packages
+      yum: state=latest name={{ item }}
+      with_items:
+        - docker
+        - NetworkManager
+
+    - name: enable network-manager
+      shell: systemctl enable NetworkManager && systemctl start NetworkManager
+
+    - name: docker storage conf file
+      copy:
+        content: "DEVS=/dev/xvdb\nVG=docker-vg\n"
+        dest: /etc/sysconfig/docker-storage-setup
+
+    - name: docker-storage-setup
+      shell: docker-storage-setup
+
+    - name: enable docker
+shell: systemctl enable docker && systemctl start docker
