@@ -1,5 +1,9 @@
 # OpenShift Origin Cluster on AWS
 
+This tutorial covers the installation of an OpenShift Origin (now OKD) cluster on AWS with a working Cloudformation template.
+Credits go to Sysdig for providing an excellent blog post about the whole procedure: 
+https://sysdig.com/blog/deploy-openshift-aws/
+
 ## Prerequisites
 - Basic knowledge of AWS (especially EC2, S3 and Cloudformation)
 - AWS account 
@@ -166,7 +170,7 @@ ip-10-0-0-4.eu-central-1.compute.internal openshift_node_group_name="node-config
 ```
 
 ### Prepare Playbook ausführen
-ansible-playbook prepare.yml
+ansible-playbook all prepare.yml
 
 ### Install prerequisites packages
 $ ansible all -m shell -a "yum install wget git net-tools bind-utils yum-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct -y" --become
